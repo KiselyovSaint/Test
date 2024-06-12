@@ -1,0 +1,147 @@
+﻿<Window x:Class="SleepSoftware.Windows.RegWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SleepSoftware.Windows"
+        mc:Ignorable="d"
+        Title="RegWindow" Height="500" Width="800" WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <ImageBrush ImageSource="/Res/Images/window_background.jpg" 
+                    Stretch="Fill" 
+                    Opacity="0.4"/>
+    </Window.Background>
+    <Grid>
+        <WrapPanel HorizontalAlignment="Right" Margin="0 12 12 0">
+            <Button x:Name="btnMaximized"
+                    Style="{StaticResource CloseRoleButton}"
+                    Margin="0 0 5 0">
+                <TextBlock Text="−" Height="25"/>
+            </Button>
+            <Button x:Name="btnClose"
+                    Style="{StaticResource CloseRoleButton}">
+                <TextBlock Text="x" Height="25"/>
+            </Button>
+        </WrapPanel>
+
+        <StackPanel>
+            <TextBlock Text="Sleep Tracking" 
+                       Style="{StaticResource TitleText}"/>
+            <Border Width="270" 
+                    Height="300" 
+                    CornerRadius="10">
+                <Border.Background>
+                    <SolidColorBrush Color="Black" 
+                                     Opacity="0.4"/>
+                </Border.Background>
+                <Grid>
+                    <StackPanel HorizontalAlignment="Center">
+                        <TextBlock Text="Регистрация" 
+                               Foreground="White" 
+                               FontSize="42"
+                               Margin="0 16 0 0"
+                               Style="{StaticResource CustomFontText}"
+                               TextAlignment="Center"/>
+                        <TextBox x:Name="tbxFName"
+                                 Style="{DynamicResource AuthRegTextBox}"
+                                 Margin="0 20 0 0"
+                                 Text="Имя"
+                                 Foreground="Gray"
+                                 GotFocus="tbxFName_GotFocus"
+                                 LostFocus="tbxFName_LostFocus"
+                                 FontFamily="/Res/Fonts/#Amatic SC"/>
+                        <TextBox x:Name="tbxLName"
+                                 Style="{DynamicResource AuthRegTextBox}"
+                                 Margin="0 15 0 0"
+                                 Text="Фамилия"
+                                 Foreground="Gray"
+                                 FontFamily="/Res/Fonts/#Amatic SC"
+                                 GotFocus="tbxLName_GotFocus"
+                                 LostFocus="tbxLName_LostFocus"/>
+                        <Grid>
+                            <DatePicker x:Name="DpBirthday"
+                                Margin="0 15 0 0"
+                                        LostFocus="DpBirthday_LostFocus"
+                                        Foreground="Black"
+                                        GotFocus="DpBirthday_GotFocus">
+                                <DatePicker.Style>
+                                    <Style TargetType="{x:Type DatePicker}">
+                                        <Setter Property="BorderThickness" Value="0"/>
+                                        <Setter Property="Padding" Value="0"/>
+                                    </Style>
+                                </DatePicker.Style>
+                                <DatePicker.Resources>
+                                    <Style TargetType="{x:Type DatePickerTextBox}">
+                                        <Setter Property="Height" Value="24"/>
+                                        <Setter Property="FontSize" Value="16"/>
+                                        <Setter Property="FontFamily" Value="/Res/Fonts/#Amatic SC"/>
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type DatePickerTextBox}">
+                                                    <Border x:Name="Bd" Padding="0 1 0 0" BorderBrush="Black" BorderThickness="1" Background="{TemplateBinding Background}" CornerRadius="5" SnapsToDevicePixels="True">
+                                                        <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </DatePicker.Resources>
+                            </DatePicker>
+                            <TextBox Style="{DynamicResource AuthRegTextBox}"
+                                     Margin="0 15 0 0"
+                                     Text="Дата Рождения"
+                                     Foreground="Gray"
+                                     Width="174"
+                                     HorizontalAlignment="Left"
+                                     BorderThickness="1"
+                                     FontFamily="/Res/Fonts/#Amatic SC"
+                                     x:Name="tbxWaterDate"
+                                     GotFocus="tbxWaterDate_GotFocus"/>
+                        </Grid>
+                        <Grid>
+                            <ComboBox Style="{DynamicResource RegComboBoxStyle}" x:Name="cbGender"
+                                      Margin="0 15 0 0"
+                                      FontFamily="/Res/Fonts/#Amatic SC"
+                                      FontSize="16"
+                                      Padding="2 0 0 0"
+                                      Height="24"
+                                      VerticalContentAlignment="Center"
+                                      Foreground="Black"
+                                      GotFocus="cbGender_GotFocus"
+                                      DropDownClosed="cbGender_DropDownClosed">
+                            </ComboBox>
+                            <TextBlock x:Name="txtWaterGender"
+                                       Text="Выберите пол"
+                                       Margin="0 15 0 0"
+                                       FontFamily="/Res/Fonts/#Amatic SC"
+                                       Padding="2 2 0 0"
+                                       FontSize="16"
+                                       IsHitTestVisible="False"
+                                       Foreground="Gray"/>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel VerticalAlignment="Bottom">
+                        <WrapPanel HorizontalAlignment="Center" Margin="0 0 0 0" Cursor="">
+                            <Button Style="{DynamicResource AuthRegButton}" Content="Назад"
+                                    Margin="0 0 10 0"
+                                    Cursor="Hand"
+                                    x:Name="btnBack"
+                                    Click="btnBack_Click"/>
+                            <Button Style="{DynamicResource AuthRegButton}" Content="Далее"
+                                    Margin="10 0 0 0"
+                                    Cursor="Hand"
+                                    x:Name="btnConinuetReg"
+                                    Click="btnConinuetReg_Click"/>
+                        </WrapPanel>
+                        <TextBlock Text="1/2"
+                               Foreground="White"
+                               FontSize="14"
+                               FontFamily="/Res/Fonts/#Amatic SC"
+                               HorizontalAlignment="Center"
+                               Margin="0 5 0 5"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Window>

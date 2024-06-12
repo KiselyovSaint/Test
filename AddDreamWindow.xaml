@@ -1,0 +1,174 @@
+﻿<Window x:Class="SleepSoftware.Windows.AddDreamWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SleepSoftware.Windows"
+        mc:Ignorable="d"
+        Title="AddDreamWindow" Height="500" Width="800" WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <ImageBrush ImageSource="/Res/Images/window_background.jpg" 
+                    Stretch="Fill" 
+                    Opacity="0.4"/>
+    </Window.Background>
+    <Grid>
+        <WrapPanel HorizontalAlignment="Right" Margin="0 12 12 0">
+            <Button x:Name="btnMaximized"
+                    Style="{StaticResource CloseRoleButton}"
+                    Margin="0 0 5 0">
+                <TextBlock Text="−" Height="25"/>
+            </Button>
+            <Button x:Name="btnClose"
+                    Style="{StaticResource CloseRoleButton}">
+                <TextBlock Text="x" Height="25"/>
+            </Button>
+        </WrapPanel>
+
+        <StackPanel>
+            <TextBlock Text="Добавление записи о сне" 
+                       Style="{StaticResource TitleText}"/>
+            <Border Width="270" 
+                    Height="300" 
+                    CornerRadius="10">
+                <Border.Background>
+                    <SolidColorBrush Color="Black" 
+                                     Opacity="0.4"/>
+                </Border.Background>
+                <Grid>
+                    <StackPanel HorizontalAlignment="Center"
+                                Margin="0 10 0 0">
+                        <StackPanel>
+                            <TextBlock Text="Начало сна"
+                                   FontSize="16"
+                                   Foreground="White"
+                                   FontFamily="/Res/Fonts/#Amatic SC Bold"/>
+                            <DatePicker Margin="0 0 0 0">
+                                <DatePicker.Style>
+                                    <Style TargetType="{x:Type DatePicker}">
+                                        <Setter Property="BorderThickness" Value="0"/>
+                                        <Setter Property="Padding" Value="0"/>
+                                    </Style>
+                                </DatePicker.Style>
+                                <DatePicker.Resources>
+                                    <Style TargetType="{x:Type DatePickerTextBox}">
+                                        <Setter Property="Height" Value="24"/>
+                                        <Setter Property="FontSize" Value="16"/>
+                                        <Setter Property="FontFamily" Value="/Res/Fonts/#Amatic SC Bold"/>
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type DatePickerTextBox}">
+                                                    <Border x:Name="Bd" Padding="0 1 0 0" BorderBrush="Black" BorderThickness="1" Background="{TemplateBinding Background}" CornerRadius="5" SnapsToDevicePixels="True">
+                                                        <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </DatePicker.Resources>
+                            </DatePicker>
+                            <WrapPanel>
+                                <ComboBox Width="60"
+                                      Style="{DynamicResource RegComboBoxStyle}"
+                                      x:Name="CbHours"
+                                      FontFamily="/Res/Fonts/#Amatic SC"
+                                      SelectedIndex="0"
+                                      FontSize="16"
+                                          Foreground="Gray">
+                                    <ComboBox.Items>
+                                        <ComboBoxItem Content="Час" 
+                                                  IsEnabled="False"/>
+                                    </ComboBox.Items>
+                                </ComboBox>
+                                <ComboBox Width="80"
+                                      Style="{DynamicResource RegComboBoxStyle}"
+                                      x:Name="CbMinute"
+                                      FontFamily="/Res/Fonts/#Amatic SC"
+                                      SelectedIndex="0"
+                                      FontSize="16"
+                                          Foreground="Gray">
+                                    <ComboBox.Items>
+                                        <ComboBoxItem Content="Минута" 
+                                                  IsEnabled="False"/>
+                                    </ComboBox.Items>
+                                </ComboBox>
+                            </WrapPanel>
+                        </StackPanel>
+                        <StackPanel Margin="0 20 0 0">
+                            <TextBlock Text="Конец сна"
+                                   FontSize="16"
+                                   Foreground="White"
+                                   FontFamily="/Res/Fonts/#Amatic SC Bold"/>
+                            <DatePicker Margin="0 0 0 0">
+                                <DatePicker.Style>
+                                    <Style TargetType="{x:Type DatePicker}">
+                                        <Setter Property="BorderThickness" Value="0"/>
+                                        <Setter Property="Padding" Value="0"/>
+                                    </Style>
+                                </DatePicker.Style>
+                                <DatePicker.Resources>
+                                    <Style TargetType="{x:Type DatePickerTextBox}">
+                                        <Setter Property="Height" Value="24"/>
+                                        <Setter Property="FontSize" Value="16"/>
+                                        <Setter Property="FontFamily" Value="/Res/Fonts/#Amatic SC Bold"/>
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type DatePickerTextBox}">
+                                                    <Border x:Name="Bd" Padding="0 1 0 0" BorderBrush="Black" BorderThickness="1" Background="{TemplateBinding Background}" CornerRadius="5" SnapsToDevicePixels="True">
+                                                        <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </DatePicker.Resources>
+                            </DatePicker>
+                            <WrapPanel>
+                                <ComboBox Width="60"
+                                      Style="{DynamicResource RegComboBoxStyle}"
+                                      x:Name="CbHoursEnd"
+                                      FontFamily="/Res/Fonts/#Amatic SC"
+                                      SelectedIndex="0"
+                                      FontSize="16"
+                                          Foreground="Gray">
+                                    <ComboBox.Items>
+                                        <ComboBoxItem Content="Час" 
+                                                  IsEnabled="False"/>
+                                    </ComboBox.Items>
+                                </ComboBox>
+                                <ComboBox Width="80"
+                                      Style="{DynamicResource RegComboBoxStyle}"
+                                      x:Name="CbMinuteEnd"
+                                      FontFamily="/Res/Fonts/#Amatic SC"
+                                      SelectedIndex="0"
+                                      FontSize="16"
+                                          Foreground="Gray">
+                                    <ComboBox.Items>
+                                        <ComboBoxItem Content="Минута" 
+                                                  IsEnabled="False"/>
+                                    </ComboBox.Items>
+                                </ComboBox>
+                            </WrapPanel>
+                        </StackPanel>
+                        <TextBox Style="{DynamicResource AuthRegTextBox}"
+                                 Width="140"
+                                 Margin="0 20 0 0"
+                                 Text="Кол-во пробуждений"
+                                 FontFamily="/Res/Fonts/#Amatic SC"
+                                 Foreground="Gray"/>
+                    </StackPanel>
+                    <StackPanel VerticalAlignment="Bottom"
+                                Margin="0 0 0 20">
+                        <WrapPanel HorizontalAlignment="Center" Margin="0 0 0 0">
+                            <Button Style="{DynamicResource AuthRegButton}" Content="Назад"
+                                Margin="0 0 10 0"
+                                Cursor="Hand"/>
+                            <Button Style="{DynamicResource AuthRegButton}" Content="Добавить"
+                                Margin="10 0 0 0"
+                                Cursor="Hand"/>
+                        </WrapPanel>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Window>

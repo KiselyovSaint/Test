@@ -1,0 +1,115 @@
+﻿<Window x:Class="SleepSoftware.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SleepSoftware"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Window.Background>
+        <ImageBrush ImageSource="/Res/Images/window_background.jpg" 
+                    Stretch="Fill" 
+                    Opacity="0.4"/>
+    </Window.Background>
+    <Grid>
+        <WrapPanel HorizontalAlignment="Right" Margin="0 12 12 0">
+            <Button x:Name="btnMaximized"
+                    Style="{StaticResource CloseRoleButton}"
+                    Margin="0 0 5 0">
+                <TextBlock Text="−" Height="25"/>
+            </Button>
+            <Button x:Name="btnClose"
+                    Style="{StaticResource CloseRoleButton}">
+                <TextBlock Text="x" Height="25"/>
+            </Button>
+        </WrapPanel>
+
+        <StackPanel HorizontalAlignment="Left"
+                    Margin="140 40 0 0">
+            <Button Style="{DynamicResource MainMenuButtonStyle}" Content="Записать сон"
+                    Margin="0 0 0 0"
+                    Cursor="Hand"/>
+            <Button Style="{DynamicResource MainMenuButtonStyle}" Content="Список снов"
+                    Margin="0 5 0 0"
+                    Cursor="Hand"/>
+            <Button Style="{DynamicResource MainMenuButtonStyle}" Content="Статистика"
+                    Margin="0 5 0 0"
+                    Cursor="Hand"/>
+            <Button Style="{DynamicResource MainMenuButtonStyle}" Content="Профиль"
+                    Margin="0 5 0 0"
+                    Cursor="Hand"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center">
+            <Border Width="300"
+                Height="135"
+                CornerRadius="10"
+                VerticalAlignment="Top"
+                Margin="0 40 0 0">
+                <Border.Background>
+                    <SolidColorBrush Color="Black"
+                                 Opacity="0.4"/>
+                </Border.Background>
+                <StackPanel HorizontalAlignment="Center">
+                    <TextBlock Text="Добро пожаловать"
+                           FontSize="32"
+                           Foreground="White"
+                           FontFamily="/Res/Fonts/#Amatic SC Bold"
+                           HorizontalAlignment="Center"
+                           Margin="0 0 0 5"/>
+                    <Separator Background="Black"
+                                   Opacity="0.4"/>
+                    <TextBlock Text="Используйте кнопки слева для навигации в приложении"
+                           FontSize="16"
+                           Foreground="White"
+                           TextWrapping="Wrap"
+                           TextAlignment="Center"
+                           FontFamily="/Res/Fonts/#Amatic SC"/>
+                    <TextBlock Text="Внизу вы можете поставить напоминание о сне"
+                           FontSize="16"
+                           Foreground="White"
+                           TextWrapping="Wrap"
+                           TextAlignment="Center"
+                           FontFamily="/Res/Fonts/#Amatic SC"/>
+                </StackPanel>
+            </Border>
+            <StackPanel HorizontalAlignment="Center"
+                        Margin="0 20 0 0">
+                <Image Source="/Res/Images/reminder.png"
+                       Width="50"
+                       Opacity="0.5"/>
+                <Border Height="100"
+                        Width="200"
+                        CornerRadius="10 10 0 0">
+                    <Border.Background>
+                        <SolidColorBrush Color="Black"
+                                         Opacity="0.4"/>
+                    </Border.Background>
+                    <StackPanel>
+                        <TextBlock Text="Напоминание"
+                           FontSize="32"
+                           Foreground="White"
+                           TextWrapping="Wrap"
+                           TextAlignment="Center"
+                           FontFamily="/Res/Fonts/#Amatic SC"
+                           VerticalAlignment="Center"/>
+                        <Separator Background="Black"
+                                   Opacity="0.4"/>
+                        <TextBlock Text="Напоминания нет"
+                                   FontSize="16"
+                                   Foreground="White"
+                                   TextWrapping="Wrap"
+                                   TextAlignment="Center"
+                                   FontFamily="/Res/Fonts/#Amatic SC"
+                                   Margin="0 10 0 0"/>
+                    </StackPanel>
+                </Border>
+                <Button Style="{DynamicResource MainMenuButtonStyle}" Content="Создать напоминание"
+                        Margin="0 5 0 0"
+                        Cursor="Hand"
+                        Width="150"/>
+            </StackPanel>
+        </StackPanel>
+        
+        
+    </Grid>
+</Window>

@@ -1,0 +1,112 @@
+﻿<Window x:Class="SleepSoftware.Windows.Reg2Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SleepSoftware.Windows"
+        mc:Ignorable="d"
+        Title="Reg2Window" Height="500" Width="800" WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <ImageBrush ImageSource="/Res/Images/window_background.jpg" 
+                    Stretch="Fill" 
+                    Opacity="0.4"/>
+    </Window.Background>
+    <Grid>
+        <WrapPanel HorizontalAlignment="Right" Margin="0 12 12 0">
+            <Button x:Name="btnMaximized"
+                    Style="{StaticResource CloseRoleButton}"
+                    Margin="0 0 5 0">
+                <TextBlock Text="−" Height="25"/>
+            </Button>
+            <Button x:Name="btnClose"
+                    Style="{StaticResource CloseRoleButton}">
+                <TextBlock Text="x" Height="25"/>
+            </Button>
+        </WrapPanel>
+
+        <StackPanel>
+            <TextBlock Text="Sleep Tracking" 
+                       Style="{StaticResource TitleText}"/>
+            <Border Width="270" 
+                    Height="300" 
+                    CornerRadius="10">
+                <Border.Background>
+                    <SolidColorBrush Color="Black" 
+                                     Opacity="0.4"/>
+                </Border.Background>
+                <Grid>
+                    <StackPanel HorizontalAlignment="Center">
+                        <TextBlock Text="Регистрация" 
+                                   Foreground="White" 
+                                   FontSize="42"
+                                   Margin="0 16 0 0"
+                                   Style="{StaticResource CustomFontText}"
+                                   TextAlignment="Center"/>
+                        <TextBox x:Name="tbxLogin"
+                                 Style="{DynamicResource AuthRegTextBox}"
+                                 Margin="0 20 0 0"
+                                 Text="Придумайте логин"
+                                 Foreground="Gray"
+                                 FontFamily="/Res/Fonts/#Amatic SC"
+                                 GotFocus="tbxLogin_GotFocus"
+                                 LostFocus="tbxLogin_LostFocus"/>
+                        <Grid>
+                            <PasswordBox Style="{DynamicResource AuthRegPassword}"
+                                         Margin="0 15 0 0"
+                                         Foreground="Black"
+                                         FontFamily="/Res/Fonts/#Amatic SC"
+                                         x:Name="pwPassword"
+                                         GotFocus="pwPassword_GotFocus"
+                                         LostFocus="pwPassword_LostFocus"/>
+                            <TextBlock Text="Придумайте парооль"
+                                       Margin="0 15 0 0"
+                                       FontFamily="/Res/Fonts/#Amatic SC"
+                                       FontSize="16"
+                                       Foreground="Gray"
+                                       Padding="3 2 0 0"
+                                       IsHitTestVisible="False"
+                                       x:Name="txtWaterPassword"/>
+                        </Grid>
+                        <Grid>
+                            <PasswordBox Style="{DynamicResource AuthRegPassword}"
+                                         Margin="0 15 0 0"
+                                         Foreground="Black"
+                                         FontFamily="/Res/Fonts/#Amatic SC"
+                                         x:Name="pwRepeatPassword"
+                                         GotFocus="pwRepeatPassword_GotFocus"
+                                         LostFocus="pwRepeatPassword_LostFocus"/>
+                            <TextBlock Text="Повторите парооль"
+                                       Margin="0 15 0 0"
+                                       FontFamily="/Res/Fonts/#Amatic SC"
+                                       FontSize="16"
+                                       Foreground="Gray"
+                                       Padding="3 2 0 0"
+                                       IsHitTestVisible="False"
+                                       x:Name="txtWaterRepeatPassword"/>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel VerticalAlignment="Bottom">
+                        <WrapPanel HorizontalAlignment="Center" Margin="0 0 0 0">
+                            <Button Style="{DynamicResource AuthRegButton}" Content="Назад"
+                                    Margin="0 0 10 0"
+                                    Cursor="Hand"
+                                    x:Name="btnBack"
+                                    Click="btnBack_Click"/>
+                            <Button Style="{DynamicResource AuthRegButton}" Content="Регистрация"
+                                    Margin="10 0 0 0"
+                                    Cursor="Hand"
+                                    x:Name="RegIn"
+                                    Click="RegIn_Click"/>
+                        </WrapPanel>
+                        <TextBlock Text="2/2"
+                               Foreground="White"
+                               FontSize="14"
+                               FontFamily="/Res/Fonts/#Amatic SC"
+                               HorizontalAlignment="Center"
+                               Margin="0 5 0 5"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </StackPanel>
+    </Grid>
+</Window>
